@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7fb">
+  <title>Tokenia — Plataforma de IA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Tokenia inicio"><span class="brand-mark">T</span><span>tokenia</span></a>
+      <button class="new-chat" id="newChatButton"><span>＋</span> Nueva conversación</button>
+      <div class="sidebar-label">TU ESPACIO</div>
+      <div class="conversation-item active"><span class="chat-icon">◌</span> Conversación actual</div>
+      <div class="sidebar-bottom"><div class="mini-plan"><span class="plan-dot"></span><div><strong>Plan <span id="sidebarPlan">FREE</span></strong><small id="sidebarUsage">Cargando consumo…</small></div><button id="sidebarUpgrade" aria-label="Mejorar plan">↗</button></div><div class="profile"><div class="avatar">U</div><div><strong>Usuario</strong><small>Cuenta personal</small></div><span class="more">···</span></div></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><div class="mobile-brand"><span class="brand-mark">T</span> tokenia</div><span class="breadcrumb">Espacio de trabajo <span>/</span> Chat</span><div class="top-actions"><span class="status-pill"><i></i> Servicio activo</span><button class="icon-button" id="helpButton" aria-label="Ayuda">?</button></div></header>
+      <div class="content-grid">
+        <section class="chat-column">
+          <div class="chat-heading"><div><div class="eyebrow">ASISTENTE DE IA</div><h1>¿Qué tienes en mente?</h1><p>Escribe una pregunta para comenzar una conversación.</p></div><div class="current-plan" id="planBadge">FREE</div></div>
+          <div class="chat-messages" id="messages"><div class="welcome-card"><div class="sparkle">✳</div><h2>Tu espacio para crear</h2><p>Pídele a la IA que te ayude a escribir, explorar ideas o resolver una duda.</p><div class="suggestions"><button data-prompt="Dame tres ideas creativas para un proyecto nuevo">✦ <span>Dame ideas creativas</span></button><button data-prompt="Explícame un tema complejo de forma sencilla">▤ <span>Explícame un tema</span></button><button data-prompt="Ayúdame a redactar un mensaje profesional">↗ <span>Redacta un mensaje</span></button></div></div></div>
+          <div class="composer-wrap"><form class="composer" id="promptForm"><textarea id="promptInput" rows="1" maxlength="8000" placeholder="Escribe tu mensaje aquí…" aria-label="Escribe tu mensaje"></textarea><div class="composer-footer"><span><span class="keyboard-hint">↵</span> para enviar · <span class="keyboard-hint">Shift + ↵</span> salto de línea</span><div class="estimate" id="estimate">~0 tokens</div><button class="send-button" id="sendButton" type="submit" aria-label="Enviar mensaje">↑</button></div></form><div class="composer-note">La IA puede cometer errores. Revisa la información importante.</div></div>
+        </section>
+        <aside class="usage-panel"><div class="panel-header"><div><div class="eyebrow">TU CUENTA</div><h2>Consumo</h2></div><button id="refreshButton" class="refresh-button" title="Actualizar">↻</button></div><div class="quota-card"><div class="quota-top"><span>Tokens este mes</span><span class="quota-icon">◫</span></div><div class="quota-value"><strong id="tokensUsed">—</strong><span id="tokensLimit">/ —</span></div><div class="progress-track"><div class="progress-fill" id="quotaProgress"></div></div><div class="quota-caption"><span id="quotaPercent">Calculando…</span><span id="tokensRemaining"></span></div><button class="upgrade-button" id="upgradeButton">Mejorar mi plan <span>→</span></button></div><div class="rate-card"><div class="rate-icon">◷</div><div><strong>Límite de solicitudes</strong><p id="rateLimit">Cargando…</p></div><span class="rate-check">✓</span></div><div class="history-card"><div class="history-heading"><div><h3>Actividad reciente</h3><p>Tokens utilizados por día</p></div><span class="week-label">7 DÍAS</span></div><div class="chart" id="historyChart" aria-label="Historial de consumo de tokens"></div><div class="chart-labels"><span>Hace 6 días</span><span>Hoy</span></div></div><div class="plan-info"><div class="plan-info-icon">✧</div><p>¿Necesitas más capacidad?<br><span>Descubre el plan que se adapta a ti.</span></p><button id="planInfoButton">Ver planes →</button></div><div class="panel-footnote">El consumo se reinicia el primer día de cada mes.</div></aside>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop hidden" id="upgradeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal"><button class="modal-close" id="closeModal" aria-label="Cerrar">×</button><div class="modal-icon">✦</div><div class="eyebrow">MÁS POSIBILIDADES</div><h2 id="modalTitle">Desbloquea el plan PRO</h2><p class="modal-copy">Más espacio para tus ideas y proyectos, con límites ampliados para que sigas creando.</p><div class="pro-card"><div><span class="pro-pill">PRO</span><h3>Para crear sin límites</h3></div><strong>$12<span>/mes</span></strong><ul><li>✓ 500.000 tokens al mes</li><li>✓ Hasta 60 solicitudes por minuto</li><li>✓ Historial de consumo</li></ul></div><button class="confirm-upgrade" id="confirmUpgrade">Activar PRO <span>→</span></button><div class="payment-note">Demostración del taller · No se realizará ningún cobro</div></div></div>
+  <script src="config.js"></script><script src="app.js"></script>
+</body>
+</html>
